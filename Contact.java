@@ -42,13 +42,16 @@ public class Contact
     /**
      * Display image on GUI
      */
-    public void displayContact() {
-        int locX = 100;
-        int locY = 100;
-        final double WIDTH = 100;
-        final double HEIGHT = 100;
+    public void displayContact(String img, double x, double y, double width, double height) {
+        double locX = x;
+        double locY = y;
+        double imgWidth = width;
+        double imgHeight = height;
         
-        UI.drawImage(this.image, locX, locY, WIDTH, HEIGHT);
+        UI.drawImage(this.image, locX, locY, imgWidth, imgHeight);
+    }
+    public void displayContact() {
+        UI.drawImage(this.image, 100, 100, 100, 100);
     }
     
     /**
