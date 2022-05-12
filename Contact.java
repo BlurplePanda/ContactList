@@ -9,60 +9,42 @@ import ecs100.*;
 public class Contact
 {
     // fields
-    private int id;
     private String name;
     private String phone;
     private String image;
     static final String DEFAULT_IMAGE = "contact.png";
     
     /**
-     * Constructor for objects of class Book
+     * Constructor for objects of class Contact
+     * @param nm - name of contact
+     * @param ph - phone number of contact
+     * @param img - image to display with contact
      */
-    public Contact(int key, String nm, String ph, String img)
+    public Contact(String nm, String ph, String img)
     {
-        id = key;
         name = nm;
         phone = ph;
-        image = img;
         if (img == null) {
             this.image = DEFAULT_IMAGE; // add default img if user clicks cancel
-        } else {
+        }
+        else {
             this.image = img;
         }
     }
     
     /**
      * Constructor overloading
-     * Set default image to obj
+     * Set default image
+     * @param nm - name of contact
+     * @param ph - phone number of contact
      */
-    public Contact(int key, String nm, String ph) {
-        this(key, nm, ph, DEFAULT_IMAGE);
-    }
-    
-    /**
-     * Display image on GUI
-     */
-    public void displayContact(String img, double x, double y, double width, double height) {
-        double locX = x;
-        double locY = y;
-        double imgWidth = width;
-        double imgHeight = height;
-        
-        UI.drawImage(this.image, locX, locY, imgWidth, imgHeight);
-    }
-    public void displayContact() {
-        UI.drawImage(this.image, 100, 100, 100, 100);
-    }
-    
-    /**
-     * Getter for id
-     */
-    public int getId() {
-        return this.id;
+    public Contact(String nm, String ph) {
+        this(nm, ph, DEFAULT_IMAGE);
     }
     
     /**
      * Getter for name
+     * @return String - name of contact
      */
     public String getName() {
         return this.name;
@@ -70,8 +52,17 @@ public class Contact
     
     /**
      * Getter for author
+     * @return String - phone number of contact
      */
     public String getPhone() {
         return this.phone;
+    }
+    
+    /**
+     * Getter for image
+     * @return String - image related to contact
+     */
+    public String getImage() {
+        return this.image;
     }
 }
